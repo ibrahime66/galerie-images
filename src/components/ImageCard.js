@@ -9,7 +9,9 @@ import {
 const ImageCard = ({ item }) => {
   return (
     <ImageBackground
-      source={{ uri: item.image }}
+      source={
+        typeof item.image === 'string' ? { uri: item.image } : item.image
+      }
       style={styles.card}
       imageStyle={{ borderRadius: 20 }}
     >
